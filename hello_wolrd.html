@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [v-cloak] {
+            /* 取消页面闪动 */
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- v-once 适用于只用显示后 后续不需要再次修改 这样可提高性能 -->
+        <div v-once>{{msg1}}</div>
+        <div v-cloak> {{msg}}</div>
+        <div v-pre> {{msg}}</div>
+        <!-- 显示原始数据 -->
+        <div v-text="msg"></div>
+    </div>
+    <script src="./js/vue.js"></script>
+    <script>
+        var vm = new Vue({
+            el: "#app",
+            data: {
+                msg: "hello, vue",
+                msg1: "我是陈庆"
+            }
+        })
+    </script>
+</body>
+
+</html>
